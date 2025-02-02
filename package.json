@@ -1,5 +1,5 @@
 {
-  "name": "socket.io-cbor-x-parser",
+  "name": "@mjfwebb/socket.io-cbor-x-parser",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
