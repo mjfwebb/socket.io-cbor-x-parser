@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/mjfwebb/socket.io-cbor-x-parser/compare/v1.0.0...v1.0.1) (2025-02-02)
+
+
+### Bug Fixes
+
+* export parser instead of Encoder Decoder ([6070e5f](https://github.com/mjfwebb/socket.io-cbor-x-parser/commit/6070e5f3f9b811e8dfda63144da746aaf4cfc300))
+
 # 1.0.0 (2025-02-02)
 
 
