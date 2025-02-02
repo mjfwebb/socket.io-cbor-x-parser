@@ -3,7 +3,7 @@ import Emitter from "component-emitter";
 import type { Packet } from "socket.io-parser";
 import { PacketType } from "socket.io-parser";
 
-export class Encoder {
+class Encoder {
   /**
    * Encode a packet into a list of strings/buffers
    */
@@ -16,7 +16,7 @@ function isObject(value: unknown): value is Record<string, unknown> {
   return Object.prototype.toString.call(value) === "[object Object]";
 }
 
-export class Decoder extends Emitter {
+class Decoder extends Emitter {
   /**
    * Receive a chunk (string or buffer) and optionally emit a "decoded" event with the reconstructed packet
    */
@@ -72,3 +72,5 @@ export class Decoder extends Emitter {
    */
   destroy(): void {}
 }
+
+export const parser = { Encoder, Decoder };
