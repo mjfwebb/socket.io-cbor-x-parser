@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,9 @@
     "@semantic-release/git": "^10.0.1",
     "@types/node": "^22.13.0",
     "semantic-release": "^24.2.1",
-    "typescript": "^5.7.3"
+    "socket.io-client": "^4.8.1",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.4"
   },
   "dependencies": {
     "cbor-x": "^1.6.0",
