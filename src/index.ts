@@ -7,7 +7,7 @@ class Encoder {
   /**
    * Encode a packet into a list of strings/buffers
    */
-  encode(packet: Packet): Buffer<ArrayBufferLike>[] {
+  encode(packet: Packet): Buffer[] {
     return [encode(packet)];
   }
 }

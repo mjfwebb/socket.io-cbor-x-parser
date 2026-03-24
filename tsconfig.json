@@ -5,7 +5,9 @@
     "target": "es6",
     "declaration": true,
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "rootDir": "./src",
+    "types": ["node"]
   },
   "include": ["src"]
 }
