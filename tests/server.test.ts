@@ -70,7 +70,7 @@ describe("parser", () => {
     });
 
     client.on("connect", () => {
-      client.emit("ack", "question", (answer) => {
+      client.emit("ack", "question", (answer: unknown) => {
         expect(answer).to.eql(42);
         client.close();
         server.close();
