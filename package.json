@@ -31,7 +31,9 @@
   },
   "dependencies": {
     "cbor-x": "^1.6.0",
-    "component-emitter": "^2.0.0",
-    "socket.io": "^4.8.1"
+    "component-emitter": "^2.0.0"
+  },
+  "peerDependencies": {
+    "socket.io-parser": "^4.2.0"
   }
 }
