@@ -2,10 +2,19 @@
   "name": "@mjfwebb/socket.io-cbor-x-parser",
   "version": "1.0.2",
   "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
-    "build": "tsc",
+    "build": "tsup",
     "test": "vitest"
   },
   "repository": {
@@ -15,7 +24,6 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/mjfwebb/socket.io-cbor-x-parser/issues"
   },
@@ -24,6 +32,7 @@
     "@types/node": "^22.13.0",
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
+    "tsup": "^8.5.1",
     "typescript": "^5.7.3",
     "vitest": "^3.0.4"
   },
