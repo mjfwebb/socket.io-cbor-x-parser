@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/mjfwebb/socket.io-cbor-x-parser/compare/v1.1.0...v1.1.1) (2026-10-02)
+
+
+### Bug Fixes
+
+* reject reserved event names in the decoder ([17bfe82](https://github.com/mjfwebb/socket.io-cbor-x-parser/commit/17bfe82f453642ea1e253d0c73e499b89be48331))
+
 # [1.1.0](https://github.com/mjfwebb/socket.io-cbor-x-parser/compare/v1.0.2...v1.1.0) (2026-03-24)
 
 
