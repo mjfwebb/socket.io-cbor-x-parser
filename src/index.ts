@@ -3,6 +3,28 @@ import Emitter from "component-emitter";
 import type { Packet } from "socket.io-parser";
 import { PacketType } from "socket.io-parser";
 
+/**
+ * Event names that socket.io and the Node.js EventEmitter give a meaning of
+ * their own. A peer that sends an event with one of these names would run the
+ * receiver's own listeners, such as `socket.on("disconnect")`, while the
+ * socket stays connected. This is the list that socket.io-parser rejects.
+ */
+const RESERVED_EVENTS: ReadonlySet<string> = new Set([
+  "connect",
+  "connect_error",
+  "disconnect",
+  "disconnecting",
+  "newListener",
+  "removeListener",
+]);
+
+function isEventNameValid(eventName: unknown): boolean {
+  return (
+    typeof eventName === "number" ||
+    (typeof eventName === "string" && !RESERVED_EVENTS.has(eventName))
+  );
+}
+
 class Encoder {
   /**
    * Encode a packet into a list of strings/buffers
@@ -51,7 +73,7 @@ class Decoder extends Emitter {
       case PacketType.EVENT: // EVENT
       case PacketType.BINARY_EVENT: {
         // BINARY_EVENT
-        return Array.isArray(data) && data.length > 0;
+        return Array.isArray(data) && isEventNameValid(data[0]);
       }
       case PacketType.ACK: // ACK
       case PacketType.BINARY_ACK: {
